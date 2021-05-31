@@ -1,0 +1,101 @@
+@media (max-width: 1280px) {
+  @include header(150px, 1.3rem, 480px, 350px, 80px, 1.3rem, 5rem);
+}
+
+@media (max-width: 950px) {
+  @include header(50px, 1.1rem, 400px, 300px, 60px, 1.2rem, 4.5rem);
+}
+
+@media (max-width: 768px) {
+  @include header(20px, 1rem, 350px, 250px, 40px, 1rem, 4rem);
+  h1 {
+    margin-top: 10px;
+  }
+  .nav__menu {
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    padding-top: 150px;
+    justify-content: center;
+    align-items: flex-start;
+    background: white;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in;
+    &.active {
+      top: 0;
+    }
+  }
+  .menu-list {
+    flex-direction: column;
+    li {
+      margin-bottom: 30px;
+    }
+  }
+  .nav__burger {
+    z-index: 11;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    &::before,
+    &::after {
+      content: "";
+      background-color: black;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    & span {
+      position: absolute;
+      background-color: black;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 9px;
+      transition: all 0.3s ease;
+    }
+
+    &.active {
+      &::before {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+      }
+      span {
+        transform: scale(0);
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .header__container {
+    padding: 90px 20px 20px;
+    flex-direction: column-reverse;
+    a {
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+    img {
+      width: 90%;
+      margin: 10px auto 15px;
+    }
+  }
+}

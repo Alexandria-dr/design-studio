@@ -1,0 +1,47 @@
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+// @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+
+$montserrat: "Montserrat", sans-serif;
+$header-bg: linear-gradient(
+  77.28deg,
+  #9e00ff 33.45%,
+  rgba(243, 0, 131, 0.79) 61.3%
+);
+$nav-bg: linear-gradient(120deg, #6e0257, rgb(146, 10, 0));
+$red: #ea1212;
+$blue: #3a0cef;
+$team-bg: linear-gradient(
+  180deg,
+  rgba(45, 5, 60, 0.88) 33.33%,
+  rgba(64, 36, 176, 0.75) 93.58%
+);
+$example-bg: linear-gradient(
+  180deg,
+  rgba(92, 14, 120, 0.88) 26.33%,
+  rgba(176, 36, 87, 0.95) 81.87%
+);
+$red-bg: linear-gradient(180deg, #f90404 0%, rgba(249, 4, 4, 0) 86.75%);
+$footer: #433b3b;
+
+@mixin header($padd, $fs-p, $mw-p, $img-w, $img-mr, $a, $h1-fs) {
+  .nav__container {
+    padding: 0 $padd;
+  }
+  .header__container {
+    padding: 130px $padd 60px;
+    p {
+      font-size: $fs-p;
+      max-width: $mw-p;
+    }
+    img {
+      width: $img-w;
+      margin-right: $img-mr;
+    }
+    a {
+      font-size: $a;
+    }
+  }
+  h1 {
+    font-size: $h1-fs;
+  }
+}
