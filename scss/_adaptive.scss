@@ -1,9 +1,40 @@
 @media (max-width: 1280px) {
   @include header(150px, 1.3rem, 480px, 350px, 80px, 1.3rem, 5rem);
+  .mission__title {
+    p {
+      font-size: 1.7rem;
+      &:last-child {
+        font-size: 2.7rem;
+      }
+    }
+  }
+  .mission__items {
+    padding: 30px 90px;
+  }
+  .mission__content {
+    padding: 20px 90px 60px;
+  }
 }
 
 @media (max-width: 950px) {
   @include header(50px, 1.1rem, 400px, 300px, 60px, 1.2rem, 4.5rem);
+  .mission__items {
+    justify-content: center;
+    padding: 30px;
+    .mission__item {
+      margin: 0 20px 30px;
+    }
+  }
+  .mission__content {
+    flex-direction: column;
+    .mission__img {
+      margin-bottom: 30px;
+    }
+    .mission__article {
+      align-items: start;
+      text-align: start;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -97,5 +128,14 @@
       width: 90%;
       margin: 10px auto 15px;
     }
+  }
+  .mission__container {
+    &::after,
+    &::before {
+      content: none;
+    }
+  }
+  .mission__content {
+    padding: 20px 20px 40px;
   }
 }
