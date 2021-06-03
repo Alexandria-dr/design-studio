@@ -723,6 +723,17 @@ footer {
   margin-right: 10px;
 }
 
+.header__desc h1,
+.header__desc p,
+.header__desc a,
+nav,
+.header__container img,
+.creative__desc p.title,
+.creative__desc p.text,
+.creative__desc a {
+  opacity: 0;
+}
+
 @media (max-width: 1400px) {
   .team__container {
     padding: 60px 130px;
