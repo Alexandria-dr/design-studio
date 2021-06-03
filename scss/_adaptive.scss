@@ -237,7 +237,7 @@
     padding: 30px 20px;
   }
   .footer__container {
-    padding: 50px 20px;
+    padding: 50px 20px 10px;
     gap: 15px;
     a.btn {
       font-size: 1.1rem;
@@ -328,6 +328,10 @@
     gap: 20px;
     a.btn {
       justify-self: center;
+    }
+    .sign {
+      grid-template-columns: 1fr;
+      grid-column: 1 / 2;
     }
   }
   .socials {

@@ -1037,7 +1037,7 @@ footer {
     padding: 30px 20px;
   }
   .footer__container {
-    padding: 50px 20px;
+    padding: 50px 20px 10px;
     gap: 15px;
   }
   .footer__container a.btn {
@@ -1137,6 +1137,13 @@ footer {
   .footer__container a.btn {
     -ms-grid-column-align: center;
         justify-self: center;
+  }
+  .footer__container .sign {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
   }
   .socials {
     margin: 0;
