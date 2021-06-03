@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
-// @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
 
 $montserrat: "Montserrat", sans-serif;
 $header-bg: linear-gradient(
@@ -19,7 +19,8 @@ $team-bg: linear-gradient(
   rgba(45, 5, 60, 0.88) 33.33%,
   rgba(64, 36, 176, 0.75) 93.58%
 );
-$example-bg: linear-gradient(
+$service-border: linear-gradient(0deg, #702b88 42.81%, #705bc4 49.86%);
+$creative-bg: linear-gradient(
   180deg,
   rgba(92, 14, 120, 0.88) 26.33%,
   rgba(176, 36, 87, 0.95) 81.87%
