@@ -1080,7 +1080,21 @@ nav,
        object-fit: cover;
   }
   .header__desc {
-    padding: 50px 0 10px;
+    padding: 70px 0 60px;
+  }
+  .header__desc h1 {
+    margin-bottom: 40px;
+    line-height: 80px;
+  }
+  .header__desc p {
+    margin: 40px 0 60px;
+    line-height: 30px;
+  }
+  .mission__article .article__img {
+    display: none;
+  }
+  .mission__article p.title {
+    margin-top: 10px;
   }
   .mission__container::after, .mission__container::before {
     content: none;

@@ -265,7 +265,23 @@
     }
   }
   .header__desc {
-    padding: 50px 0 10px;
+    padding: 70px 0 60px;
+    h1 {
+      margin-bottom: 40px;
+      line-height: 80px;
+    }
+    p {
+      margin: 40px 0 60px;
+      line-height: 30px;
+    }
+  }
+  .mission__article {
+    .article__img {
+      display: none;
+    }
+    p.title {
+      margin-top: 10px;
+    }
   }
   .mission__container {
     &::after,
