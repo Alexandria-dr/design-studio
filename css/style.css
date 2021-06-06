@@ -723,11 +723,6 @@ footer {
   margin-right: 10px;
 }
 
-.header__desc h1,
-.header__desc p,
-.header__desc a,
-nav,
-.header__container img,
 .creative__desc p.title,
 .creative__desc p.text,
 .creative__desc a {
@@ -1173,5 +1168,83 @@ nav,
   .socials {
     margin: 0;
   }
+}
+
+@font-face {
+  font-family: "monotype corsiva";
+  font-style: normal;
+  font-weight: 400;
+  src: local("monotype corsiva"), url("../fonts/mtcorsva.woff2") format("woff2"), url("../fonts/mtcorsva.woff") format("woff");
+}
+
+.portfolio__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.portfolio__header * {
+  display: inline-block;
+}
+
+.portfolio__header h1 {
+  text-transform: uppercase;
+  color: #dd5e5e;
+  font-size: 3rem;
+  margin: 20px 15px 20px 0;
+}
+
+.portfolio__header h2 {
+  font-family: "monotype corsiva";
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin: 20px 15px;
+}
+
+.portfolio__container {
+  padding: 30px 150px;
+}
+
+.header__btn a {
+  color: black;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#ea1212), to(transparent)) bottom/var(--d, 0) 3px no-repeat;
+  background: linear-gradient(90deg, transparent, #ea1212, transparent) bottom/var(--d, 0) 3px no-repeat;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.header__btn a.btn {
+  border: 2px solid black;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 25px;
+  background: none;
+}
+
+.header__btn a.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.header__btn a:hover {
+  --d: 100%;
+}
+
+.header__btn :first-child {
+  font-size: 1.3rem;
+}
+
+.header__btn :first-child img {
+  width: 16px;
+  height: 15px;
+}
+
+.header__btn :first-child span {
+  font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */
