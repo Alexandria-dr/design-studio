@@ -23,7 +23,6 @@ function init(){
           },
           leave() {},
           enter() {},
-          afterEnter(){ console.log( 'heeloo')}
         },
         {
           name: 'portfolio',
