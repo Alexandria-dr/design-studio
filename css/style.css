@@ -1322,4 +1322,110 @@ footer {
 .header__btn :first-child span {
   font-weight: 500;
 }
+
+.portfolio__works {
+  padding-top: 40px;
+  width: 100%;
+  height: 80vh;
+}
+
+#mCSB_1 {
+  width: 100%;
+}
+
+#mCSB_1_container {
+  margin: 0 auto;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 210px;
+          column-gap: 210px;
+  justify-items: center;
+}
+
+.mCSB_scrollTools {
+  right: 50%;
+}
+
+.mCSB_scrollTools .mCSB_draggerContainer {
+  top: 30px;
+  bottom: 30px;
+  left: 100%;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  opacity: 1;
+  left: -4px;
+  border-radius: 0;
+  width: 10px;
+  background-color: #a42424;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:hover, .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar:active,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar:hover,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar:active {
+  background-color: #a42424;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: rgba(164, 36, 36, 0.76);
+}
+
+.portfolio__work {
+  padding: 30px 20px 20px;
+  background-color: #f2f2f2;
+  position: relative;
+  cursor: pointer;
+  width: 500px;
+}
+
+.portfolio__work img {
+  width: 100%;
+  height: auto;
+}
+
+.portfolio__work:hover .work__desc {
+  opacity: 1;
+}
+
+.work__desc {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.77);
+  color: white;
+  opacity: 0;
+}
+
+.work__desc h3 {
+  font-size: 2rem;
+}
+
+.work__desc p {
+  font-size: 1.6rem;
+}
+
+.work__desc p span {
+  font-weight: 600;
+  color: #eb7171;
+}
+
+.work__desc p a {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #92ccbe;
+}
+
+.work__desc p a:hover {
+  color: #1bf7ff;
+}
 /*# sourceMappingURL=style.css.map */
