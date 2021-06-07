@@ -28,28 +28,23 @@ barba.init({
         namespace: 'home',
         beforeEnter({ next }) {
 
-        // load your script
         let script = document.createElement('script');
-        script.src = './js/home.js'; // location of your draggable js file that is responsible for that image loading and dragging functionality
+        script.src = './js/home.js'; 
         next.container.appendChild(script);
         }, 
     },
-    // {
-    //   namespace: 'portfolio',
-    //   beforeEnter({ next2 }) {
+    {
+      namespace: 'portfolio',
+      beforeEnter({ next }) {
 
-    //   // load your script
-    //   let script2 = document.createElement('script');
-    //   script2.src = './js/scroll.js'; // location of your draggable js file that is responsible for that image loading and dragging functionality
-    //   next2.container.appendChild(script2);
-    //   script2.src = './scroll/jquery.mCustomScrollbar.concat.min.js';
-    //   console.log(script2);
-    //   next2.container.appendChild(script2);
-    //   }, 
-  // }
+      let script = document.createElement('script');
+      script.src = './js/scroll.js'; 
+      next.body.appendChild(script);
+      }, 
+  }
 ],
     })
-
+// barba.hooks.beforeEnter(() => init())
 
 
 
