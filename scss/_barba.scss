@@ -12,7 +12,7 @@
   transform: translateX(0);
 }
 .home-leave-active {
-  transition: all 0.7s ease;
+  transition: all 1s ease;
 }
 .home-leave-to {
   transform: translateX(100%);
@@ -21,7 +21,7 @@
   transform: translateX(-100%);
 }
 .home-enter-active {
-  transition: all 0.7s ease;
+  transition: all 1s ease;
 }
 .home-enter-to {
   transform: translateX(0);
@@ -31,7 +31,7 @@
   transform: translateX(0);
 }
 .portfolio-leave-active {
-  transition: all 0.7s ease;
+  transition: all 1s ease;
 }
 .portfolio-leave-to {
   transform: translateX(-100%);
@@ -40,7 +40,7 @@
   transform: translateX(100%);
 }
 .portfolio-enter-active {
-  transition: all 0.7s ease;
+  transition: all 1s ease;
 }
 .portfolio-enter-to {
   transform: translateX(0);

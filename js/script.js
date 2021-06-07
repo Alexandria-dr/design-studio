@@ -1,47 +1,62 @@
 gsap.registerPlugin(ScrollTrigger);
 barba.use(barbaCss);
-const hid = document.querySelectorAll('.hidden')
-function init(){
-
-  barba.init({
-      transitions: [
-        {
-          name: 'home',
-          beforeOnce() {  },
-          once() { },
-          afterOnce() { if (!hasPlayed) {
-            headerAnim()
-            hid.forEach(element => {
-              element.classList.remove('hidden')          
-            });
-          } },
-        }, 
-        {
-          name: 'home',
-          to: {
-            namespace: 'home'
-          },
-          leave() {},
-          enter() {},
+let hasPlayed = sessionStorage.getItem("hasMyAnimationPlayed");
+let tl = gsap.timeline({ duration: 0.5, delay: 0.1,  onComplete: ()=>{sessionStorage.setItem("hasMyAnimationPlayed", true);} });
+let hidd = document.querySelectorAll('.hidden')
+function headerAnim() {
+  tl
+    .fromTo(".header__desc h1", { x: -100, opacity: 0, }, {
+      opacity: 1,
+      x: 0
+    })
+    .fromTo([".header__desc p"], { x: -100, opacity: 0, }, {
+      opacity: 1,
+      x: 0,
+    })
+    .fromTo(".header__desc a", {opacity:0},{duration: 0.2, opacity:1})
+    .fromTo("nav", { opacity: 0, }, {
+      opacity: 1,
+    })
+    .fromTo(".header__container img", {opacity:0},{opacity:1,});
+}
+ 
+barba.init({
+  transitions: [
+    {
+      name: 'home',
+        beforeOnce() {  },
+        once() { },
+        afterOnce() { if (!hasPlayed) {
+          headerAnim()
+          hidd.forEach(element => {
+            element.classList.remove('hidden')          
+          });
+        } },
+      }, 
+      {
+        name: 'home',
+        to: {
+          namespace: 'home'
         },
-        {
-          name: 'portfolio',
-          to: {
-            namespace: 'portfolio'
-          },
-          leave() { },
-          enter() { }
-        },]
-      })
+        leave() {},
+        enter() {},
+      },
+      {
+        name: 'portfolio',
+        to: {
+          namespace: 'portfolio'
+        },
+        leave() { },
+        enter() { }
+      },]
+    })
+    
 
-
-  let hasPlayed = sessionStorage.getItem("hasMyAnimationPlayed");
-  if (hasPlayed){
-    hid.forEach(element => {
-      element.classList.remove('hidden')          
-  })}
-
+function init(){
+let hid = document.querySelectorAll('.hidden');
+let hasPlayed = sessionStorage.getItem("hasMyAnimationPlayed");
 const navButton = document.querySelector('.nav__burger');
+
 navButton.addEventListener('click', e => {
     navButton.classList.toggle('active');
     document.querySelector('.nav__menu').classList.toggle('active');
@@ -89,8 +104,6 @@ window.addEventListener('scroll', toggleTopMenu);
   }
         
   const gsapLeft = document.querySelectorAll('.gsap_left')
-  
-  let tl = gsap.timeline({ duration: 0.5, delay: 0.1,  onComplete: ()=>{sessionStorage.setItem("hasMyAnimationPlayed", true);} });
   let tl2 = gsap.timeline({ duration: 0.3,});
 
   function fromBottom(element, y, y2, o1, o2) {gsap.fromTo(element,  {y: y, opacity:o1, }, {
@@ -109,25 +122,6 @@ function gsapOpacity(element, o, o1) {
     duration: 0.5
   },)}  
 
-  function headerAnim() {
-    tl
-      .fromTo(".header__desc h1", { x: -100, opacity: 0, }, {
-        opacity: 1,
-        x: 0
-      })
-      .fromTo([".header__desc p"], { x: -100, opacity: 0, }, {
-        opacity: 1,
-        x: 0,
-      })
-      .fromTo(".header__desc a", {opacity:0},{duration: 0.2, opacity:1})
-      .fromTo("nav", { opacity: 0, }, {
-        opacity: 1,
-      })
-      .fromTo(".header__container img", {opacity:0},{opacity:1,});
-  }
-
-  
-
   opacity_item.forEach(function(element){
     hide(element);
     ScrollTrigger.create({
@@ -139,7 +133,6 @@ function gsapOpacity(element, o, o1) {
       onLeaveBack: self => self.disable()
   })})
 
- 
 gsapUp.forEach(function(element){
   hide(element);
   ScrollTrigger.create({
@@ -151,7 +144,6 @@ gsapUp.forEach(function(element){
     onLeaveBack: self => self.disable()
   })})
 
-
 gsapLeft.forEach(function(element){
   hide(element);
   ScrollTrigger.create({
@@ -162,7 +154,6 @@ gsapLeft.forEach(function(element){
     // onLeaveBack: function() {fromLeft(element, 0, -200, 1, 0)},
     onLeaveBack: self => self.disable()
   })})
-
 
 ScrollTrigger.create({
   trigger:'.creative__desc',
@@ -185,8 +176,15 @@ ScrollTrigger.create({
     // onLeaveBack: ()=> {gsap.fromTo([".creative__desc p.title",".creative__desc p.text",".creative__desc a"],{opacity:1},{opacity:0, duration:0.5})}
     onLeaveBack: self => self.disable()
 })
-
+console.log(hasPlayed);
+if (hasPlayed){
+  hid.forEach(element => {
+    element.classList.remove('hidden')          
+  })}
 }
+
 window.addEventListener('load', function () {
   init();
 })
+
+barba.hooks.beforeEnter(() => {init()})
