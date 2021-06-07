@@ -1,4 +1,46 @@
 gsap.registerPlugin(ScrollTrigger);
+barba.use(barbaCss);
+const hid = document.querySelectorAll('.hidden')
+function init(){
+
+  barba.init({
+      transitions: [
+        {
+          name: 'home',
+          beforeOnce() {  },
+          once() { },
+          afterOnce() { if (!hasPlayed) {
+            headerAnim()
+            hid.forEach(element => {
+              element.classList.remove('hidden')          
+            });
+          } },
+        }, 
+        {
+          name: 'home',
+          to: {
+            namespace: 'home'
+          },
+          leave() {},
+          enter() {},
+          afterEnter(){ console.log( 'heeloo')}
+        },
+        {
+          name: 'portfolio',
+          to: {
+            namespace: 'portfolio'
+          },
+          leave() { },
+          enter() { }
+        },]
+      })
+
+
+  let hasPlayed = sessionStorage.getItem("hasMyAnimationPlayed");
+  if (hasPlayed){
+    hid.forEach(element => {
+      element.classList.remove('hidden')          
+  })}
 
 const navButton = document.querySelector('.nav__burger');
 navButton.addEventListener('click', e => {
@@ -8,7 +50,6 @@ navButton.addEventListener('click', e => {
 })
 
 const header = document.querySelector('nav');
-
 function toggleTopMenu (){
   if (pageYOffset > 30) {
     header.classList.add('is-scroll')}
@@ -34,8 +75,8 @@ window.addEventListener('scroll', toggleTopMenu);
       // gsap
       
       // ScrollTrigger.defaults({
-        //   markers:true
-        // })
+      //     markers:true
+      //   })
         
   function hide(element) {
     gsap.set(element, {opacity: 0, duration: 0.5});
@@ -51,7 +92,7 @@ window.addEventListener('scroll', toggleTopMenu);
   const gsapLeft = document.querySelectorAll('.gsap_left')
   
   let tl = gsap.timeline({ duration: 0.5, delay: 0.1,  onComplete: ()=>{sessionStorage.setItem("hasMyAnimationPlayed", true);} });
-  let tl2 = gsap.timeline();
+  let tl2 = gsap.timeline({ duration: 0.3,});
 
   function fromBottom(element, y, y2, o1, o2) {gsap.fromTo(element,  {y: y, opacity:o1, }, {
     y: y2,
@@ -61,9 +102,7 @@ window.addEventListener('scroll', toggleTopMenu);
 }
 
 const gsapUp = document.querySelectorAll('.gsap_up')
-
 const opacity_item = document.querySelectorAll('.gsap_opacity')
-console.log(opacity_item);
 
 function gsapOpacity(element, o, o1) {
   gsap.fromTo(element, { opacity:o, }, {
@@ -88,7 +127,7 @@ function gsapOpacity(element, o, o1) {
       .fromTo(".header__container img", {opacity:0},{opacity:1,});
   }
 
-    
+  
 
   opacity_item.forEach(function(element){
     hide(element);
@@ -125,30 +164,30 @@ gsapLeft.forEach(function(element){
     onLeaveBack: self => self.disable()
   })})
 
+
 ScrollTrigger.create({
   trigger:'.creative__desc',
   start: 'top-=50 center',
     end: 'bottom top',
-    onEnter: ()=>{tl
-      .fromTo(".creative__desc p.title", { x: -100, opacity: 0, }, {
-        opacity: 1,
-        x: 0
-      })
-      .fromTo(".creative__desc p.text", { x: -100, opacity: 0, }, {
-        opacity: 1,
-        x: 0
-      })
-      .fromTo(".creative__desc a", { opacity: 0, }, {
-        opacity: 1,
-      })
-    },
+    onEnter: ()=>
+    {
+        tl2
+        .fromTo(".creative__desc p.title", { x: -100, opacity: 0, }, {
+          opacity: 1,
+          x: 0
+        })
+        .fromTo(".creative__desc p.text", { x: -100, opacity: 0, }, {
+          opacity: 1,
+          x: 0
+        })
+        .fromTo(".creative__desc a", { opacity: 0, }, {
+          opacity: 1,
+        });},
     // onLeaveBack: ()=> {gsap.fromTo([".creative__desc p.title",".creative__desc p.text",".creative__desc a"],{opacity:1},{opacity:0, duration:0.5})}
     onLeaveBack: self => self.disable()
 })
 
-let hasPlayed = sessionStorage.getItem("hasMyAnimationPlayed");
-console.log(hasPlayed);
- 
-if (!hasPlayed) {
-  headerAnim();
 }
+window.addEventListener('load', function () {
+  init();
+})

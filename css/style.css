@@ -1,6 +1,79 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
 @import url("../css/normalize.css");
+.home-once {
+  opacity: 0;
+}
+
+.home-once-active {
+  -webkit-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+
+.home-once-to {
+  opacity: 1;
+}
+
+.home-leave {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.home-leave-active {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.home-leave-to {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.home-enter {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.home-enter-active {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.home-enter-to {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.portfolio-leave {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.portfolio-leave-active {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.portfolio-leave-to {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.portfolio-enter {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.portfolio-enter-active {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.portfolio-enter-to {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 html {
   font-family: "Montserrat", sans-serif;
 }
@@ -723,9 +796,11 @@ footer {
   margin-right: 10px;
 }
 
-.creative__desc p.title,
-.creative__desc p.text,
-.creative__desc a {
+.hidden {
+  opacity: 0;
+}
+
+.hidden * {
   opacity: 0;
 }
 

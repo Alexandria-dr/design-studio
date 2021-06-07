@@ -25,9 +25,9 @@
     <link rel="manifest" href="./favicon/site.webmanifest" />
     <title>Design</title>
   </head>
-  <body>
-    <div class="wrapper">
-      <nav>
+  <body data-barba="wrapper">
+    <div class="wrapper" data-barba="container" data-barba-namespace="home">
+      <nav class="hidden">
         <div class="nav__container">
           <div class="nav__logo">
             <p>Design</p>
@@ -43,7 +43,7 @@
         </div>
       </nav>
       <section class="header">
-        <div class="header__container">
+        <div class="header__container hidden">
           <img src="./img/photo1.webp" alt="model" />
           <div class="header__desc">
             <h1>Design Studio</h1>
@@ -259,6 +259,9 @@
         </div>
       </footer>
     </div>
+
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/@barba/css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
     <script src="./js/script.js"></script>
