@@ -128,7 +128,10 @@ function init(){
         // onLeaveBack: function() {fromLeft(element, 0, -200, 1, 0)},
         onLeaveBack: self => self.disable()
       })})
-    
+      const desc = [".creative__desc p.title",".creative__desc p.text",".creative__desc a"];
+      desc.forEach(function(element){
+        hide(document.querySelector(element))
+      })
     ScrollTrigger.create({
       trigger:'.creative__desc',
       start: 'top-=50 center',
@@ -157,6 +160,6 @@ function init(){
       })}
 };
  
-// init();
-barba.hooks.afterEnter(() => init())
+init();
+// barba.hooks.afterEnter(() => init())
 

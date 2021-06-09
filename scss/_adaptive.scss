@@ -58,6 +58,44 @@
       }
     }
   }
+  .portfolio__header__container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .portfolio__header {
+    h2 {
+      margin: 10px 0;
+      font-size: 2.2rem;
+    }
+  }
+  .header__btn {
+    a {
+      position: relative;
+      top: 10px;
+    }
+  }
+  #mCSB_1 {
+    width: 100%;
+  }
+  #mCSB_1_container {
+    column-gap: 100px;
+    padding: 0 30px;
+  }
+  .portfolio__works {
+    padding-top: 10px;
+  }
+  .portfolio__work {
+    width: 100%;
+  }
+  .work__desc {
+    padding: 15px 30px;
+    h3 {
+      font-size: 1.6rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
 }
 
 @media (max-width: 950px) {
@@ -130,6 +168,48 @@
           font-size: 1.5rem;
         }
       }
+    }
+  }
+  .portfolio__header {
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+  .header__btn {
+    a {
+      top: 0;
+      &.btn {
+        font-size: 1.1rem;
+      }
+    }
+    :first-child {
+      font-size: 1.1rem;
+      img {
+        width: 12px;
+        height: 11px;
+      }
+    }
+  }
+  #mCSB_1_container {
+    column-gap: 40px;
+  }
+  .mCSB_scrollTools .mCSB_dragger,
+  .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag {
+    .mCSB_dragger_bar {
+      left: -2px;
+      width: 6px;
+    }
+  }
+  .work__desc {
+    padding: 15px 30px;
+    h3 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1.1rem;
     }
   }
 }
@@ -246,6 +326,30 @@
   .socials {
     width: 100%;
   }
+  .portfolio__header {
+    h2 {
+      display: none;
+    }
+  }
+  #mCSB_1_container {
+    grid-template-columns: 1fr;
+    margin-right: 10px;
+  }
+  .mCSB_scrollTools {
+    right: 20px;
+  }
+  .portfolio__work {
+    max-width: 500px;
+  }
+  .work__desc {
+    padding: 15px 30px;
+    h3 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+  }
 }
 
 @media (max-width: 560px) {
@@ -352,5 +456,48 @@
   }
   .socials {
     margin: 0;
+  }
+  .portfolio__header__container {
+    padding: 0 20px 10px;
+    flex-wrap: wrap;
+  }
+  .portfolio__header {
+    h1 {
+      font-size: 1.7rem;
+      margin: 10px 10px 10px 0;
+    }
+  }
+  .header__btn {
+    a {
+      &.btn {
+        display: none;
+      }
+    }
+  }
+  .portfolio__works {
+    height: fit-content;
+    padding: 10px;
+  }
+  .portfolio__work {
+    padding: 20px 0;
+  }
+  #mCSB_1_container {
+    margin: 0;
+    padding: 0;
+  }
+  #mCSB_1_scrollbar_vertical {
+    display: none;
+  }
+  .mCSB_draggerContainer {
+    display: none;
+  }
+  .work__desc {
+    padding: 5px 10px;
+    h3 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
 }

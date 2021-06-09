@@ -1,52 +1,61 @@
-barba.use(barbaCss);
+// barba.use(barbaCss);
 
-barba.init({
-  transitions: [
-    {
-      name: 'home',
-        beforeOnce() {  },
-        once() { },
-        afterOnce() {  },
-      }, 
-      {
-        name: 'home',
-        to: {
-          namespace: 'home'
-        },
-        leave() {},
-        enter() {},
-      },
-      {
-        name: 'portfolio',
-        to: {
-          namespace: 'portfolio'
-        },
-        leave() { },
-        enter() { }
-      },],
-      views: [{
-        namespace: 'home',
-        beforeEnter({ next }) {
+// barba.init({
+//   transitions: [
+//     {
+//       name: 'home',
+//         beforeOnce() {  },
+//         once() { },
+//         afterOnce() {  },
+//       }, 
+//       {
+//         name: 'home',
+//         to: {
+//           namespace: 'home'
+//         },
+//         leave() {},
+//         enter() {},
+//       },
+//       {
+//         name: 'portfolio',
+//         to: {
+//           namespace: 'portfolio'
+//         },
+//         leave() { },
+//         enter() { }
+//       },],
+//       views: [{
+//         namespace: 'home',
+//         beforeEnter({ next }) {
 
-        let script = document.createElement('script');
-        script.src = './js/home.js'; 
-        next.container.appendChild(script);
-        }, 
-    },
-    {
-      namespace: 'portfolio',
-      beforeEnter({ next }) {
+//         let script = document.createElement('script');
+//         script.src = './js/home.js'; 
+//         next.container.appendChild(script);
+//         }, 
+//     },
+//     {
+//       namespace: 'portfolio',
+//       beforeEnter({ next }) {
 
-      let script = document.createElement('script');
-      script.src = './js/scroll.js'; 
-      next.body.appendChild(script);
-      }, 
-  }
-],
-    })
-// barba.hooks.beforeEnter(() => init())
+//       let script = document.createElement('script');
+//       script.src = './js/scroll.js'; 
+//       next.body.appendChild(script);
+//       }, 
+//   }
+// ],
+//     })
+// barba.hooks.beforeEnter(() => initt())
 
-
+// function initt() {
+  
+//   if (document.querySelector('body').dataset.check == 'home'){
+//     console.log('it is home');
+//   }
+  
+//   if (document.querySelector('body').dataset.check == 'portfolio'){
+//     console.log('it is portfolio');
+// }
+// }
 
 
 

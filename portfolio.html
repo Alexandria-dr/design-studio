@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Portfolio</title>
   </head>
-  <body data-barba="wrapper">
+  <body data-barba="wrapper" data-check="portfolio">
     <div
       class="wrapper"
       data-barba="container"
@@ -37,16 +37,18 @@
       <section class="portfolio">
         <div class="portfolio__container">
           <div class="portfolio__header">
-            <div class="header__title">
-              <h1>portfolio</h1>
-              <h2>Choose your favourite</h2>
-            </div>
-            <div class="header__btn">
-              <a href="./index.html"
-                ><img src="./img/arrow.svg" alt="arrow" />
-                <span>Back </span>
-              </a>
-              <a href="#" class="btn">Contact Us</a>
+            <div class="portfolio__header__container">
+              <div class="header__title">
+                <h1>portfolio</h1>
+                <h2>Choose your favourite</h2>
+              </div>
+              <div class="header__btn">
+                <a href="./index.html"
+                  ><img src="./img/arrow.svg" alt="arrow" />
+                  <span>Back </span>
+                </a>
+                <a href="#" class="btn">Contact Us</a>
+              </div>
             </div>
           </div>
           <div class="portfolio__works mCustomScrollbar" id="content_1">
@@ -125,19 +127,53 @@
           </div>
         </div>
       </section>
+      <footer>
+        <div class="footer__container">
+          <ul class="socials">
+            <li>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+          <a href="#" class="link">Let's talk?</a>
+          <a href="#" class="btn">Contact Us</a>
+          <div class="sign">
+            <p>
+              Design:
+              <a target="_blank" href="https://github.com/yanedelman"
+                >@yanedelman</a
+              >
+              <br />
+              Front-end:
+              <a target="_blank" href="https://github.com/Alexandria-dr"
+                >@alexandria-dr</a
+              >
+            </p>
+            <p>© 2021</p>
+          </div>
+        </div>
+      </footer>
     </div>
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="https://unpkg.com/@barba/css"></script>
+    <!-- <script src="https://unpkg.com/@barba/core"></script> -->
+    <!-- <script src="https://unpkg.com/@barba/css"></script> -->
     <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"
       integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
       crossorigin="anonymous"
     ></script>
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script> -->
     <script src="./scroll/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="./js/scroll.js"></script>
-    <script src="./js/script.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
   </body>
 </html>
